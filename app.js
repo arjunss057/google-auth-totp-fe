@@ -1,6 +1,6 @@
 //app.js
 
-API_URL = "http://localhost:8000";
+API_URL = "https://google-auth-totp.onrender.com";
 
 let googleAccessToken = localStorage.getItem("google_access_token");
 let googlePassword = null;

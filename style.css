@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Arial,
+        sans-serif;
+
+    background: #f5f5f5;
+}
+
+.container {
+    width: 90%;
+    max-width: 700px;
+
+    margin: 40px auto;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+input {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px;
+
+    margin: 10px 0;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 16px;
+
+    margin: 5px 5px 5px 0;
+
+    border: none;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 15px;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.hidden {
+    display: none;
+}
+
+.header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.card {
+    background: white;
+
+    padding: 20px;
+
+    margin: 20px 0;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.08);
+}
+
+.account {
+    background: white;
+
+    padding: 20px;
+
+    margin: 15px 0;
+
+    border-radius: 10px;
+}
+
+.account-name {
+    font-size: 14px;
+
+    color: #666;
+}
+
+.totp-code {
+    font-size: 36px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin: 15px 0;
+}
+
+.timer {
+    color: #666;
+
+    font-size: 14px;
+}
+
+.danger {
+    background: #b00020;
+}
+
+.message {
+    margin-top: 10px;
+}
+
+#qrScanner {
+
+    width: 100%;
+
+    max-width: 400px;
+
+    margin: 20px auto;
+}

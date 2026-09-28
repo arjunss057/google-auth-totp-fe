@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Google Authenticator</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- Argon2 -->
+    <script src="https://cdn.jsdelivr.net/npm/argon2-browser/dist/argon2-bundled.min.js"></script>
+
+    <!-- TOTP -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/otplib@12.0.1/dist/otplib-browser.js"></script> -->
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Google</h1>
+
+    <!-- ========================================= -->
+    <!-- LOGIN / REGISTER -->
+    <!-- ========================================= -->
+
+    <section id="authSection">
+
+        <h2>Login</h2>
+
+        <input
+            id="username"
+            type="text"
+            placeholder="Username"
+        >
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+        >
+
+        <div class="buttons">
+
+            <button
+                onclick="login()"
+            >
+                Login
+            </button>
+
+            <button
+                onclick="register()"
+            >
+                Register
+            </button>
+
+        </div>
+
+        <p id="authMessage"></p>
+
+    </section>
+
+
+    <!-- ========================================= -->
+    <!-- AUTHENTICATOR -->
+    <!-- ========================================= -->
+
+    <section
+        id="authenticatorSection"
+        class="hidden"
+    >
+
+        <div class="header">
+
+            <div>
+                <h2>Authenticator</h2>
+
+                <p id="loggedInUser"></p>
+            </div>
+
+            <button
+                onclick="logout()"
+            >
+                Logout
+            </button>
+
+        </div>
+
+
+        <!-- ADD ACCOUNT -->
+
+        <div class="card">
+
+            <h3>Add account</h3>
+
+            <button type="button" onclick="startQrScanner()">
+                Scan QR Code
+            </button>
+
+            <div id="qrScanner" class="hidden"></div>
+            <button id="stopScannerButton" class="hidden" type="button" onclick="stopQrScanner()">
+                Stop Scanner
+            </button>
+
+            <input
+                id="serviceName"
+                type="text"
+                placeholder="Service name"
+            >
+
+            <input
+                id="accountName"
+                type="text"
+                placeholder="Account name"
+            >
+
+            <input
+                id="serviceSecret"
+                type="text"
+                placeholder="TOTP secret"
+            >
+
+            <button
+                onclick="addAccount()"
+            >
+                Add account
+            </button>
+
+            
+
+            <p id="accountMessage"></p>
+
+        </div>
+
+
+        <!-- ACCOUNTS -->
+
+        <div>
+
+            <h3>Your accounts</h3>
+
+            <div id="accountsContainer"></div>
+
+        </div>
+
+
+        <!-- PASSWORD -->
+
+        <div class="card">
+
+            <h3>Change password</h3>
+
+            <input
+                id="oldPassword"
+                type="password"
+                placeholder="Current password"
+            >
+
+            <input
+                id="newPassword"
+                type="password"
+                placeholder="New password"
+            >
+
+            <button
+                onclick="changePassword()"
+            >
+                Change password
+            </button>
+
+            <p id="passwordMessage"></p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="crypto.js"></script>
+<script src="db.js"></script>
+<script src="totp.js"></script>
+<script src="https://unpkg.com/html5-qrcode"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
